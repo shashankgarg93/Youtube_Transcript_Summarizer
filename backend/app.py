@@ -8,10 +8,6 @@ def get_transcript(id):
     transcript = YouTubeTranscriptApi.get_transcript(id,languages=['en-IN','en'])
     for detail in transcript:
         str_transcript+=detail['text']+" "
-    temp = str_transcript.split('\n')
-    str_transcript =' '
-    for word in temp:
-        str_transcript+=word + ' '
     return str_transcript
 
 def abs_summarizer(transcript):
@@ -49,9 +45,14 @@ if __name__ == '__main__':
     app.run()
 
 
+<<<<<<< HEAD
 
 # url = "https://www.youtube.com/watch?v=OY2jMXKVhIw"
 # temp = url.split('=')
 # video_id = temp[1]
 # transcript = get_transcript(video_id)
 # print(abs_summarizer(transcript))
+=======
+#idontknow
+(abs_summarizer(get_transcript("ezlG2DyiXM0")))
+>>>>>>> 435df79b9658643dd877baf10626896cdc686ed8
