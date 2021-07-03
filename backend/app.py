@@ -43,5 +43,5 @@ def abs_summarizer(transcript):
     print(outputs)
     print(tokenizer.decode(outputs[0]))
 
-
+#idontknow
 (abs_summarizer(get_transcript("ezlG2DyiXM0")))
