@@ -38,7 +38,7 @@ def get_():
     temp = url.split('=')
     video_id = temp[1]
     transcript = get_transcript(video_id)
-    return Response(abs_summarizer(transcript),status=201)
+    return Response(abs_summarizer(transcript),status=200)
 
 # server the app when this file is run
 if __name__ == '__main__':

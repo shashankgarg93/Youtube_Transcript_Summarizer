@@ -1,14 +1,30 @@
+
 {
-    "manifest_version": 2,
-    "name": "YSummarize",
-    "description": "An extension to provide a summarized transcript of a YouTube Subtitle eligible Video.",
-    "version": "1.0",
-    "permissions": ["tabs"],
-    "browser_action":
+	"name": "YouTube Summarizer",
+	"description" : "This Chrome extension allows summarizing of a YouTube video by displaying a graph of most important its sections with a bulletpoint summary.",
+	"version": "0.3",
+  "permissions": ["storage", "webNavigation", "http://127.0.0.1:5000/", "tabs","alarms"],
+	"manifest_version": 2,
+
+  "content_scripts": [
     {
-        "default_popup":"popup.html"
-    },
-    "content_scripts":[ {
-        "matches":["https://www.youtube.com/watch?v=*"],
-        "js": ["contentScript.js"] }]
+      "matches": [
+        "https://www.youtube.com/watch?v=*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "browser_action": {
+    "default_icon": "extension_icon.png",
+    "default_popup": "popup.html",
+    "default_title": "YouTube Summarizer"
+  }
 }
